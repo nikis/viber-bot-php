@@ -58,6 +58,7 @@ class Client
             $httpInit = array_merge($options['http'], $httpInit);
         }
         $this->http = $httpClient;
+		$this->http->setOptions($httpInit);
     }
 
     /**
