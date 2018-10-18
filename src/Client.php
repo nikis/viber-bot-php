@@ -5,6 +5,7 @@ namespace Viber;
 use Viber\Api\Message;
 use Viber\Api\Event\Type;
 use Viber\Api\Exception\ApiException;
+use Viber\Http\HttpClientInterface;
 
 /**
  * Simple rest client for Viber public account (PA)
@@ -32,7 +33,7 @@ class Client
     /**
      * Http network client
      *
-     * @var \GuzzleHttp\Client
+     * @var HttpClientInterface
      */
     protected $http;
 
@@ -44,7 +45,7 @@ class Client
      * @throws \Viber\Api\Exception\ApiException
      * @param array $options
      */
-    public function __construct($options)
+    public function __construct(HttpClientInterface $httpClient, $options)
     {
         if (!isset($options['token'])) {
             throw new ApiException('No token provided');
@@ -56,7 +57,7 @@ class Client
         if (isset($options['http']) && is_array($options['http'])) {
             $httpInit = array_merge($options['http'], $httpInit);
         }
-        $this->http = new \GuzzleHttp\Client($httpInit);
+        $this->http = $httpClient;
     }
 
     /**

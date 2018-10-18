@@ -2,6 +2,7 @@
 
 namespace Viber\Api;
 
+use Viber\Http\HttpResponseInterface;
 use Viber\Api\Exception\ApiException;
 
 /**
@@ -21,11 +22,11 @@ class Response
     /**
      * Create api response from http-response
      *
-     * @param  \GuzzleHttp\Psr7\Response $response network response
+     * @param  HttpResponseInterface $response network response
      * @return \Viber\Api\Response
      * @throws \Viber\Api\Exception\ApiException
      */
-    public static function create(\GuzzleHttp\Psr7\Response $response)
+    public static function create(HttpResponseInterface $response)
     {
         // - validate body
         $data = json_decode($response->getBody(), true);

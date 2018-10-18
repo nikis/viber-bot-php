@@ -40,15 +40,9 @@ class Bot
      * @throws \RuntimeException
      * @param array $options
      */
-    public function __construct(array $options)
+    public function __construct(Client $client)
     {
-        if (isset($options['token'])) {
-            $this->client = new Client($options);
-        } elseif (isset($options['client']) && $options['client'] instanceof Client) {
-            $this->client = $options['client'];
-        } else {
-            throw new \RuntimeException('Specify "client" or "token" parameter');
-        }
+        $this->client = $client;
     }
 
     /**
