@@ -2,6 +2,12 @@
 
 namespace Viber\Api;
 
+if(!function_exists('hash_equals')) {
+	function hash_equals($known_string, $user_string) {
+		return $known_string === $user_string;
+	}
+}
+
 /**
  * Api signature
  *
