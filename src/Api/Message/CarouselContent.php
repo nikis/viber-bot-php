@@ -59,15 +59,15 @@ class CarouselContent extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'rich_media' => [
-                'Type' => $this->getType(),
+        return array_merge(parent::toArray(), array(
+			 'rich_media' => array(
+				'Type' => $this->getType(),
                 'ButtonsGroupColumns' => $this->getButtonsGroupColumns(),
                 'ButtonsGroupRows' => $this->getButtonsGroupRows(),
                 'BgColor' => $this->getBgColor(),
                 'Buttons' => $this->getButtonsApiArray(),
-            ]
-        ]);
+			)
+		));
     }
 
     /**
@@ -173,7 +173,7 @@ class CarouselContent extends Message
      */
     protected function getButtonsApiArray()
     {
-        $buttons = [];
+        $buttons = array();
         foreach ($this->getButtons() as $i) {
             $buttons[] = $i->toApiArray();
         }

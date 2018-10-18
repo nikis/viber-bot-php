@@ -16,7 +16,7 @@ class Entity
      *
      * @var array
      */
-    protected $propertiesMap = [];
+    protected $propertiesMap = array();
 
     /**
      * Make new instance from api response array
@@ -55,7 +55,7 @@ class Entity
      */
     public function toArray()
     {
-        return [];
+        return array();
     }
 
     /**

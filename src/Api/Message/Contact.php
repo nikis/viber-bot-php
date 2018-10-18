@@ -28,9 +28,9 @@ class Contact extends Message
     /**
      * {@inheritdoc}
      */
-    protected $propertiesMap = [
-        'contact' => 'setConcat'
-    ];
+    protected $propertiesMap = array(
+		'contact' => 'setConcat'
+	);
 
     /**
      * {@inheritdoc}
@@ -45,12 +45,12 @@ class Contact extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'contact' => [
-                'name' => $this->getName(),
+        return array_merge(parent::toArray(), array(
+			'contact' => array(
+				'name' => $this->getName(),
                 'phone_number' => $this->getPhoneNumber(),
-            ]
-        ]);
+			)
+		));
     }
 
     /**

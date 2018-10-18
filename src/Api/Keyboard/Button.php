@@ -143,8 +143,8 @@ class Button extends Entity
      */
     public function toArray()
     {
-        return [
-            'Columns' => $this->getColumns(),
+        return array(
+			'Columns' => $this->getColumns(),
             'Rows' => $this->getRows(),
             'BgColor' => $this->getBgColor(),
             'BgMediaType' => $this->getBgMediaType(),
@@ -158,7 +158,7 @@ class Button extends Entity
             'TextHAlign' => $this->getTextHAlign(),
             'TextOpacity' => $this->getTextOpacity(),
             'TextSize' => $this->getTextSize(),
-        ];
+		);
     }
 
     /**

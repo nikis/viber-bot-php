@@ -42,11 +42,11 @@ class Picture extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'text' => $this->getText(),
+        return array_merge(parent::toArray(), array(
+			'text' => $this->getText(),
             'media' => $this->getMedia(),
             'thumbnail' => $this->getThumbnail(),
-        ]);
+		));
     }
 
     /**

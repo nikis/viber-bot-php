@@ -56,14 +56,14 @@ class Message extends Entity
      */
     public function toArray()
     {
-        return [
-            'receiver' => $this->getReceiver(),
+        return array(
+			'receiver' => $this->getReceiver(),
             'type' => $this->getType(),
             'sender' => $this->getSender(),
             'tracking_data' => $this->getTrackingData(),
             'min_api_version' => $this->getMinApiVersion(),
             'keyboard' => $this->getKeyboard(),
-        ];
+		);
     }
 
     /**

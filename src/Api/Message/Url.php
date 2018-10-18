@@ -31,9 +31,9 @@ class Url extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'media' => $this->getMedia()
-        ]);
+        return array_merge(parent::toArray(), array(
+			'media' => $this->getMedia()
+		));
     }
 
     /**

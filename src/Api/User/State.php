@@ -43,22 +43,22 @@ class State extends Entity
     /**
      * {@inheritDoc}
      */
-    protected $propertiesMap = [
-        'id' => 'setId',
+    protected $propertiesMap = array(
+		'id' => 'setId',
         'online_status' => 'setStatus',
         'online_status_message' => 'setMessage',
-    ];
+	);
 
     /**
      * {@inheritDoc}
      */
     public function toArray()
     {
-        return [
-            'id' => $this->getId(),
+        return array(
+			'id' => $this->getId(),
             'online_status' => $this->getStatus(),
             'online_status_message' => $this->getMessage(),
-        ];
+		);
     }
 
     /**

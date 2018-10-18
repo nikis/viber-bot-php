@@ -50,9 +50,9 @@ class Client
             throw new ApiException('No token provided');
         }
         $this->token = $options['token'];
-        $httpInit = [
-            'base_uri' => self::BASE_URI,
-        ];
+        $httpInit = array(
+			'base_uri' => self::BASE_URI
+		);
         if (isset($options['http']) && is_array($options['http'])) {
             $httpInit = array_merge($options['http'], $httpInit);
         }
@@ -80,12 +80,12 @@ class Client
     public function call($method, $data)
     {
         try {
-            $response = $this->http->request('POST', $method, [
-                'headers' => [
-                    'X-Viber-Auth-Token' => $this->token
-                ],
+            $response = $this->http->request('POST', $method, array(
+				'headers' => array(
+					'X-Viber-Auth-Token' => $this->token
+				),
                 'json' => $data
-            ]);
+			));
             return \Viber\Api\Response::create($response);
         } catch (\RuntimeException $e) {
             throw new ApiException($e->getMessage(), $e->getCode(), $e);
@@ -107,16 +107,16 @@ class Client
     public function setWebhook($url, $eventTypes = null)
     {
         if (null === $eventTypes) {
-            $eventTypes = [Type::SUBSCRIBED, Type::CONVERSATION, Type::MESSAGE];
+            $eventTypes = array(Type::SUBSCRIBED, Type::CONVERSATION, Type::MESSAGE);
         }
         if (empty($url) || !preg_match('|^https://.*|s', $url)) {
             throw new ApiException('Invalid webhook url: ' . $url);
         }
 
-        return $this->call('set_webhook', [
-            'url' => $url,
+        return $this->call('set_webhook', array(
+			'url' => $url,
             'event_types' => $eventTypes,
-        ]);
+		));
     }
 
     /**
@@ -127,7 +127,9 @@ class Client
      */
     public function getAccountInfo()
     {
-        return $this->call('get_account_info', [1 => 1]);
+        return $this->call('get_account_info', array(
+			1 => 1
+		));
     }
 
     /**
@@ -143,9 +145,9 @@ class Client
      */
     public function getUserDetails($userId)
     {
-        return $this->call('get_user_details', [
-            'id' => $userId
-        ]);
+        return $this->call('get_user_details', array(
+			'id' => $userId
+		));
     }
 
     /**
@@ -160,9 +162,9 @@ class Client
      */
     public function getOnlineStatus(array $userIds)
     {
-        return $this->call('get_online', [
-            'ids' => $userIds
-        ]);
+        return $this->call('get_online', array(
+			'ids' => $userIds
+		));
     }
 
     /**

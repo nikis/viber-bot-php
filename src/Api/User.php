@@ -106,8 +106,8 @@ class User extends Entity
      */
     public function toArray()
     {
-        return [
-            'id' => $this->getId(),
+        return array(
+			'id' => $this->getId(),
             'name' => $this->getName(),
             'avatar' => $this->getAvatar(),
             'country' => $this->getCountry(),
@@ -117,7 +117,7 @@ class User extends Entity
             'viber_version' => $this->getViberVersion(),
             'mcc' => $this->getMcc(),
             'mnc' => $this->getMnc(),
-        ];
+		);
     }
 
     /**

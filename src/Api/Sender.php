@@ -33,22 +33,22 @@ class Sender extends Entity
     /**
      * {@inheritDoc}
      */
-    protected $propertiesMap = [
-        'id' => 'setId',
+    protected $propertiesMap = array(
+		'id' => 'setId',
         'name' => 'setName',
         'avatar' => 'setAvatar',
-    ];
+	);
 
     /**
      * {@inheritDoc}
      */
     public function toArray()
     {
-        return [
-            'id' => $this->getId(),
+        return array(
+			'id' => $this->getId(),
             'name' => $this->getName(),
             'avatar' => $this->getAvatar(),
-        ];
+		);
     }
 
     /**

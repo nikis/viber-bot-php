@@ -33,9 +33,9 @@ class Sticker extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'sticker_id' => $this->getStickerId(),
-        ]);
+        return array_merge(parent::toArray(), array(
+			'sticker_id' => $this->getStickerId()
+		));
     }
 
     /**

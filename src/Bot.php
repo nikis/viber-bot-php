@@ -28,7 +28,7 @@ class Bot
      *
      * @var array
      */
-    protected $managers = [];
+    protected $managers = array();
 
     /**
      * Init client

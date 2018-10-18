@@ -16,7 +16,7 @@ class Location extends Message
      *
      * @var array
      */
-    protected $location = ['lat' => 0, 'lon' => 0];
+    protected $location = array('lat' => 0, 'lon' => 0);
 
     /**
      * {@inheritdoc}
@@ -31,9 +31,9 @@ class Location extends Message
      */
     public function toArray()
     {
-        return array_merge(parent::toArray(), [
-            'location' => $this->getLocation()
-        ]);
+        return array_merge(parent::toArray(), array(
+			'location' => $this->getLocation()
+		));
     }
 
     /**
