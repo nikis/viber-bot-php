@@ -215,13 +215,8 @@ class Bot
         foreach ($this->managers as $manager) {
             if ($manager->isMatch($event)) {
                 $returnValue = $manager->runHandler($event);
-                if ($returnValue && $returnValue instanceof Entity) { // reply with entity
-                    $this->outputEntity($returnValue);
-                }
-                break;
+				return $returnValue;
             }
         }
-
-        return $this;
     }
 }
