@@ -1,7 +1,8 @@
 # PHP sdk for Viber api
+## This version work with older php versions.\Present HttpClient and HttpResponse interfaces that gives power to use different http clients/versions (curl,Guzzle, whatever you need)
 
-[![Build
-Status](https://secure.travis-ci.org/Bogdaan/viber-bot-php.png)](http://travis-ci.org/Bogdaan/viber-bot-php)
+[Fork from bogdaan/viber-bot-php](https://github.com/Bogdaan/viber-bot-php)
+
 
 Library to develop a bot for the Viber platform. [Create you first Viber bot step by step](docs/first-steps.md), see demo at `viber://pa?chatURI=viber-bot-php&context=github.com`
 
